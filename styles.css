@@ -192,8 +192,12 @@ body {
     background-color: #f44336;
 }
 
-.member-owner {
+.member-moderator {
     background-color: #ff9800;
+}
+
+.member-owner {
+    background-color: #7289da;
 }
 
 .main-content {
@@ -228,7 +232,7 @@ body {
     background-color: #5865f2;
     color: #fff;
     border: none;
-    padding: 10px;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
@@ -286,4 +290,3 @@ body {
         right: 10px;
     }
 }
-
