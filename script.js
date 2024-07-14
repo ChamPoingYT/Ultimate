@@ -1,67 +1,51 @@
-// Pseudo chiffré à déchiffrer
-const pseudoChiffres = {
-    'je5a': 'a', 'je3q': 'b', 'zm9a': 'c', 'zl6q': 'd', 'ct9o': 'e',
-    'gz2a': 'f', 'dh4g': 'g', 'rt5a': 'h', 'zj5s': 'i', 'zk7a': 'j',
-    'gj2g': 'k', 'hb4j': 'l', 'am4s': 'm', 'jt9g': 'n', 'gq1n': 'o',
-    'nt7g': 'p', 'js4f': 'q', 'kg3j': 'r', 'dh7h': 's', 'gp1a': 't',
-    'ne3q': 'u', 'pt8h': 'v', 'ht3w': 'w', 'ke5z': 'x', 'ge1h': 'y', 'ee2a': 'z'
-};
+// script.js
 
-function sendMessage() {
-    const messageInput = document.getElementById('messageInput');
-    const message = messageInput.value.trim();
+// Simulation de l'avatar par défaut
+const defaultAvatarUrl = 'default-avatar.jpg';
 
-    if (message !== '') {
-        const messageList = document.getElementById('messageList');
-        const messageElement = document.createElement('div');
-        messageElement.textContent = `Me: ${message}`;
-        messageList.appendChild(messageElement);
+// Changement d'avatar
+const changeAvatarButton = document.getElementById('changeAvatarButton');
+changeAvatarButton.addEventListener('click', function() {
+    // Placeholder pour le changement d'avatar (exemple)
+    alert('Fonctionnalité de changement d\'avatar à implémenter');
+});
 
-        // Clear input after sending message
-        messageInput.value = '';
+// Déconnexion
+const logoutButton = document.getElementById('logoutButton');
+logoutButton.addEventListener('click', function() {
+    // Placeholder pour la déconnexion (exemple)
+    if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
+        // Logique de déconnexion
+        alert('Vous êtes déconnecté');
+        window.location.href = 'logout.html'; // Redirection vers la page de déconnexion
     }
-}
+});
 
-function searchFriend() {
-    const friendUsernameInput = document.getElementById('friendUsername').value.trim().toLowerCase();
-    const decodedUsername = decodeUsername(friendUsernameInput);
+// Création de forum
+const createForumButton = document.getElementById('createForumButton');
+createForumButton.addEventListener('click', function() {
+    // Placeholder pour la création de forum (exemple)
+    alert('Fonctionnalité de création de forum à implémenter');
+});
 
-    if (decodedUsername) {
-        const searchResult = document.getElementById('searchResult');
-        searchResult.textContent = `Nom d'utilisateur déchiffré : ${decodedUsername}`;
+// Création de salon
+const createChannelButton = document.getElementById('createChannelButton');
+createChannelButton.addEventListener('click', function() {
+    // Placeholder pour la création de salon (exemple)
+    alert('Fonctionnalité de création de salon à implémenter');
+});
+
+// Fonction de recherche de forum (exemple de fonctionnalité)
+function searchForum() {
+    event.preventDefault(); // Empêche le rechargement de la page par défaut
+    const forumSearchInput = document.getElementById('forumSearchInput').value;
+    // Placeholder pour la recherche de forum (exemple)
+    if (forumSearchInput.trim() !== '') {
+        alert(`Recherche de forum : ${forumSearchInput}`);
+        // Ici, vous pouvez implémenter la logique pour rechercher des forums
+        // Par exemple, mettre à jour la liste des forums trouvés dans l'interface
     } else {
-        const searchResult = document.getElementById('searchResult');
-        searchResult.textContent = 'Nom d'utilisateur non trouvé ou invalide.';
+        alert('Veuillez entrer un terme de recherche');
     }
-
-    return false; // Empêche l'envoi du formulaire
-}
-
-function decodeUsername(chiffre) {
-    // Convertit le pseudo chiffré en pseudo normal à l'aide de la table de correspondance
-    return chiffre.split('-').map(part => pseudoChiffres[part]).join('');
-}
-
-function createAccount() {
-    const usernameInput = document.getElementById('signupUsername').value.trim();
-    const passwordInput = document.getElementById('signupPassword').value.trim();
-    const emailInput = document.getElementById('signupEmail').value.trim();
-
-    // Vous pouvez ajouter ici la validation des données du formulaire
-
-    // Exemple simplifié de gestion de compte (stockage en local storage pour démonstration)
-    const newUser = {
-        username: usernameInput,
-        password: passwordInput,
-        email: emailInput
-    };
-
-    // Simulation de stockage des informations de l'utilisateur (à remplacer par un backend réel)
-    localStorage.setItem('currentUser', JSON.stringify(newUser));
-
-    const signupMessage = document.getElementById('signupMessage');
-    signupMessage.textContent = 'Compte créé avec succès!';
-
-    return false; // Empêche l'envoi du formulaire
 }
 
