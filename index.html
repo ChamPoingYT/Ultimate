@@ -14,11 +14,11 @@
                 <a href="#" class="nav-link">Home</a>
                 <a href="profile.html" class="nav-link">Profile</a>
                 <a href="settings.html" class="nav-link">Settings</a>
-                <a href="logout.html" class="nav-link">Logout</a>
+                <a href="#" id="logoutButton" class="nav-link">Logout</a>
             </nav>
             <div class="avatar-container">
-                <img src="avatar.jpg" alt="Avatar" class="avatar">
-                <button class="change-avatar-button">Change Avatar</button>
+                <img src="default-avatar.jpg" alt="Avatar" class="avatar">
+                <button id="changeAvatarButton" class="change-avatar-button">Change Avatar</button>
             </div>
         </div>
     </header>
@@ -29,25 +29,26 @@
                 <input type="text" id="forumSearchInput" class="search-input" placeholder="Search forums...">
                 <button type="submit" class="search-button">Search</button>
             </form>
-            <ul class="forum-list">
+            <ul id="forumList" class="forum-list">
                 <!-- Liste dynamique des forums -->
                 <li class="forum-item">Forum 1</li>
                 <li class="forum-item">Forum 2</li>
                 <li class="forum-item">Forum 3</li>
             </ul>
-            <button class="create-forum-button">Create Forum</button>
+            <button id="createForumButton" class="create-forum-button">Create Forum</button>
         </aside>
         <section class="main-content">
             <h2 class="section-title">Forum Name</h2>
-            <ul class="channel-list">
+            <ul id="channelList" class="channel-list">
                 <!-- Liste dynamique des salons -->
                 <li class="channel-item">Text Channel 1</li>
                 <li class="channel-item">Text Channel 2</li>
                 <li class="channel-item">Voice Channel 1</li>
             </ul>
-            <button class="create-channel-button">Create Channel</button>
+            <button id="createChannelButton" class="create-channel-button">Create Channel</button>
         </section>
     </main>
     <script src="script.js"></script>
 </body>
 </html>
+
