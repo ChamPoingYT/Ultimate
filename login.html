@@ -7,25 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="shadow">
-        <h1>Ultimate Social Network</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-        </nav>
+    <header>
+        <div class="navbar">
+            <h1>Ultimate Social Network</h1>
+            <nav>
+                <a href="#" class="nav-link">Home</a>
+                <a href="login.html" class="nav-link">Login</a>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section id="login" class="light-border">
-            <h2>Connexion</h2>
-            <form onsubmit="login()">
-                <input type="text" id="loginUsername" placeholder="Nom d'utilisateur" required>
-                <input type="password" id="loginPassword" placeholder="Mot de passe" required>
-                <button type="submit">Se connecter</button>
+    <main class="container">
+        <section id="login" class="card">
+            <h2 class="section-title">Connexion</h2>
+            <form onsubmit="login()" class="login-form">
+                <input type="text" id="loginUsername" class="login-input" placeholder="Nom d'utilisateur" required>
+                <input type="password" id="loginPassword" class="login-input" placeholder="Mot de passe" required>
+                <button type="submit" class="login-button">Se connecter</button>
             </form>
-            <p id="loginMessage"></p>
+            <p id="loginMessage" class="login-message"></p>
         </section>
     </main>
     <script src="script.js"></script>
 </body>
 </html>
-
