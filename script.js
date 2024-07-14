@@ -6,16 +6,13 @@ const defaultAvatarUrl = 'default-avatar.jpg';
 // Changement d'avatar
 const changeAvatarButton = document.getElementById('changeAvatarButton');
 changeAvatarButton.addEventListener('click', function() {
-    // Placeholder pour le changement d'avatar (exemple)
     alert('Fonctionnalité de changement d\'avatar à implémenter');
 });
 
 // Déconnexion
 const logoutButton = document.getElementById('logoutButton');
 logoutButton.addEventListener('click', function() {
-    // Placeholder pour la déconnexion (exemple)
     if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
-        // Logique de déconnexion
         alert('Vous êtes déconnecté');
         window.location.href = 'logout.html'; // Redirection vers la page de déconnexion
     }
@@ -24,26 +21,53 @@ logoutButton.addEventListener('click', function() {
 // Création de forum
 const createForumButton = document.getElementById('createForumButton');
 createForumButton.addEventListener('click', function() {
-    // Placeholder pour la création de forum (exemple)
     alert('Fonctionnalité de création de forum à implémenter');
 });
 
 // Création de salon
 const createChannelButton = document.getElementById('createChannelButton');
 createChannelButton.addEventListener('click', function() {
-    // Placeholder pour la création de salon (exemple)
     alert('Fonctionnalité de création de salon à implémenter');
 });
 
-// Fonction de recherche de forum (exemple de fonctionnalité)
+// Affichage du profil au survol de l'avatar
+const avatarImages = document.querySelectorAll('.avatar-small');
+const profilePreview = document.getElementById('profilePreview');
+
+avatarImages.forEach(avatar => {
+    avatar.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+        const username = 'Username'; // Exemple de récupération du nom d'utilisateur
+        const bio = 'Bio de l\'utilisateur'; // Exemple de récupération de la bio
+        const role = 'Role de l\'utilisateur'; // Exemple de récupération du rôle
+        profilePreview.style.display = 'block';
+        profilePreview.innerHTML = `
+            <div class="profile-info">
+                <img src="${avatar.src}" alt="Avatar" class="avatar-small">
+                <div class="profile-details">
+                    <span class="profile-username">${username}</span><br>
+                    <span class="profile-bio">${bio}</span><br>
+                    <span class="profile-role">${role}</span>
+                </div>
+            </div>
+        `;
+    });
+});
+
+// Masquage du profil au clic à l'extérieur
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.avatar-small')) {
+        profilePreview.style.display = 'none';
+    }
+});
+
+// Fonction de recherche de forum
 function searchForum() {
-    event.preventDefault(); // Empêche le rechargement de la page par défaut
+    event.preventDefault();
     const forumSearchInput = document.getElementById('forumSearchInput').value;
-    // Placeholder pour la recherche de forum (exemple)
     if (forumSearchInput.trim() !== '') {
         alert(`Recherche de forum : ${forumSearchInput}`);
-        // Ici, vous pouvez implémenter la logique pour rechercher des forums
-        // Par exemple, mettre à jour la liste des forums trouvés dans l'interface
+        // Implémenter la logique de recherche de forum ici
     } else {
         alert('Veuillez entrer un terme de recherche');
     }
