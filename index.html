@@ -9,7 +9,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <h1>Ultimate Social Network</h1>
+            <h1 class="logo">Ultimate</h1>
             <nav>
                 <a href="#" class="nav-link">Home</a>
                 <a href="profile.html" class="nav-link">Profile</a>
@@ -23,7 +23,7 @@
         </div>
     </header>
     <main class="container">
-        <aside class="sidebar">
+        <section class="sidebar">
             <h2 class="section-title">Forums</h2>
             <form onsubmit="searchForum()" class="search-form">
                 <input type="text" id="forumSearchInput" class="search-input" placeholder="Search forums...">
@@ -31,14 +31,34 @@
             </form>
             <ul id="forumList" class="forum-list">
                 <!-- Liste dynamique des forums -->
-                <li class="forum-item">Forum 1</li>
-                <li class="forum-item">Forum 2</li>
-                <li class="forum-item">Forum 3</li>
+                <li class="forum-item">
+                    <img src="default-avatar.jpg" alt="Avatar" class="avatar-small">
+                    <div class="forum-info">
+                        <span class="forum-username">Username</span><br>
+                        <span class="forum-message">Message</span>
+                    </div>
+                </li>
+                <li class="forum-item">
+                    <img src="default-avatar.jpg" alt="Avatar" class="avatar-small">
+                    <div class="forum-info">
+                        <span class="forum-username">Username</span><br>
+                        <span class="forum-message">Message</span>
+                    </div>
+                </li>
             </ul>
-            <button id="createForumButton" class="create-forum-button">Create Forum</button>
-        </aside>
+            <div class="forum-members">
+                <h3>Members</h3>
+                <ul class="member-list">
+                    <li class="member-item"><span class="member-name">Member 1</span><span class="member-role">Member</span></li>
+                    <li class="member-item"><span class="member-name">Member 2</span><span class="member-role">VIP</span></li>
+                    <li class="member-item"><span class="member-name">Member 3</span><span class="member-role">YouTube</span></li>
+                    <li class="member-item"><span class="member-name">Member 4</span><span class="member-role">Moderator</span></li>
+                    <li class="member-item"><span class="member-name">Member 5</span><span class="member-role">Owner</span></li>
+                </ul>
+            </div>
+        </section>
         <section class="main-content">
-            <h2 class="section-title">Forum Name</h2>
+            <h2 class="section-title">Channel Name</h2>
             <ul id="channelList" class="channel-list">
                 <!-- Liste dynamique des salons -->
                 <li class="channel-item">Text Channel 1</li>
@@ -47,8 +67,17 @@
             </ul>
             <button id="createChannelButton" class="create-channel-button">Create Channel</button>
         </section>
+        <section class="profile-preview" id="profilePreview">
+            <div class="profile-info">
+                <img src="default-avatar.jpg" alt="Avatar" class="avatar-small">
+                <div class="profile-details">
+                    <span class="profile-username">Username</span><br>
+                    <span class="profile-bio">Bio</span><br>
+                    <span class="profile-role">Role</span>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
 </html>
-
