@@ -1,0 +1,165 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background-color: #7289da;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.change-avatar-button {
+    background-color: #5865f2;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.change-avatar-button:hover {
+    opacity: 0.8;
+}
+
+.sidebar {
+    background-color: #2f3136;
+    color: #fff;
+    padding: 20px;
+    width: 250px;
+    min-height: calc(100vh - 60px);
+}
+
+.section-title {
+    color: #7289da;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.search-form {
+    margin-bottom: 15px;
+}
+
+.search-input {
+    padding: 8px;
+    border: 1px solid #7289da;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 150px;
+}
+
+.search-button {
+    background-color: #5865f2;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    opacity: 0.8;
+}
+
+.forum-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.forum-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #36393f;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.forum-item:hover {
+    background-color: #46494f;
+}
+
+.create-forum-button {
+    background-color: #5865f2;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.create-forum-button:hover {
+    opacity: 0.8;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.channel-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.channel-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.channel-item:hover {
+    background-color: #ddd;
+}
+
+.create-channel-button {
+    background-color: #5865f2;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.create-channel-button:hover {
+    opacity: 0.8;
+}
+
