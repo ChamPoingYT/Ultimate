@@ -4,47 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Social Network</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="navbar">
+    <header class="header">
+        <div class="container">
             <h1>Ultimate Social Network</h1>
             <nav>
                 <a href="#" class="nav-link">Home</a>
-                <a href="login.html" class="nav-link">Login</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <a href="settings.html" class="nav-link">Settings</a>
+                <a href="logout.html" class="nav-link">Logout</a>
             </nav>
+            <div class="avatar-container">
+                <img src="avatar.jpg" alt="Avatar" class="avatar">
+                <button class="change-avatar-button">Change Avatar</button>
+            </div>
         </div>
     </header>
     <main class="container">
-        <section id="chat" class="card">
-            <div id="messageList" class="message-list">
-                <!-- Messages seront ajoutés dynamiquement ici -->
-            </div>
-            <form onsubmit="sendMessage()" class="message-form">
-                <input type="text" id="messageInput" class="message-input" placeholder="Tapez votre message...">
-                <button type="submit" class="send-button">Envoyer</button>
+        <aside class="sidebar">
+            <h2 class="section-title">Forums</h2>
+            <form onsubmit="searchForum()" class="search-form">
+                <input type="text" id="forumSearchInput" class="search-input" placeholder="Search forums...">
+                <button type="submit" class="search-button">Search</button>
             </form>
-        </section>
-
-        <section id="friendSearch" class="card">
-            <h2 class="section-title">Ajouter un ami</h2>
-            <form onsubmit="searchFriend()" class="search-form">
-                <input type="text" id="friendUsername" class="search-input" placeholder="Entrez le pseudo de l'ami...">
-                <button type="submit" class="search-button">Rechercher</button>
-            </form>
-            <p id="searchResult" class="search-result"></p>
-        </section>
-
-        <section id="signup" class="card">
-            <h2 class="section-title">Créer un compte</h2>
-            <form onsubmit="createAccount()" class="signup-form">
-                <input type="text" id="signupUsername" class="signup-input" placeholder="Nom d'utilisateur" required>
-                <input type="password" id="signupPassword" class="signup-input" placeholder="Mot de passe" required>
-                <input type="email" id="signupEmail" class="signup-input" placeholder="Email" required>
-                <button type="submit" class="signup-button">S'inscrire</button>
-            </form>
-            <p id="signupMessage" class="signup-message"></p>
+            <ul class="forum-list">
+                <!-- Liste dynamique des forums -->
+                <li class="forum-item">Forum 1</li>
+                <li class="forum-item">Forum 2</li>
+                <li class="forum-item">Forum 3</li>
+            </ul>
+            <button class="create-forum-button">Create Forum</button>
+        </aside>
+        <section class="main-content">
+            <h2 class="section-title">Forum Name</h2>
+            <ul class="channel-list">
+                <!-- Liste dynamique des salons -->
+                <li class="channel-item">Text Channel 1</li>
+                <li class="channel-item">Text Channel 2</li>
+                <li class="channel-item">Voice Channel 1</li>
+            </ul>
+            <button class="create-channel-button">Create Channel</button>
         </section>
     </main>
     <script src="script.js"></script>
