@@ -7,41 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="shadow">
-        <h1>Ultimate Social Network</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-        </nav>
+    <header>
+        <div class="navbar">
+            <h1>Ultimate Social Network</h1>
+            <nav>
+                <a href="#" class="nav-link">Home</a>
+                <a href="login.html" class="nav-link">Login</a>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section id="chat" class="light-border">
-            <h2>Chat</h2>
-            <div id="messageList">
+    <main class="container">
+        <section id="chat" class="card">
+            <div id="messageList" class="message-list">
                 <!-- Messages seront ajoutés dynamiquement ici -->
             </div>
-            <input type="text" id="messageInput" placeholder="Tapez votre message...">
-            <button onclick="sendMessage()">Envoyer</button>
+            <form onsubmit="sendMessage()" class="message-form">
+                <input type="text" id="messageInput" class="message-input" placeholder="Tapez votre message...">
+                <button type="submit" class="send-button">Envoyer</button>
+            </form>
         </section>
 
-        <section id="friendSearch" class="light-border">
-            <h2>Ajouter un ami</h2>
-            <form onsubmit="searchFriend()">
-                <input type="text" id="friendUsername" placeholder="Entrez le pseudo de l'ami...">
-                <button type="submit">Rechercher</button>
+        <section id="friendSearch" class="card">
+            <h2 class="section-title">Ajouter un ami</h2>
+            <form onsubmit="searchFriend()" class="search-form">
+                <input type="text" id="friendUsername" class="search-input" placeholder="Entrez le pseudo de l'ami...">
+                <button type="submit" class="search-button">Rechercher</button>
             </form>
-            <p id="searchResult"></p>
+            <p id="searchResult" class="search-result"></p>
         </section>
 
-        <section id="signup" class="light-border">
-            <h2>Créer un compte</h2>
-            <form onsubmit="createAccount()">
-                <input type="text" id="signupUsername" placeholder="Nom d'utilisateur" required>
-                <input type="password" id="signupPassword" placeholder="Mot de passe" required>
-                <input type="email" id="signupEmail" placeholder="Email" required>
-                <button type="submit">S'inscrire</button>
+        <section id="signup" class="card">
+            <h2 class="section-title">Créer un compte</h2>
+            <form onsubmit="createAccount()" class="signup-form">
+                <input type="text" id="signupUsername" class="signup-input" placeholder="Nom d'utilisateur" required>
+                <input type="password" id="signupPassword" class="signup-input" placeholder="Mot de passe" required>
+                <input type="email" id="signupEmail" class="signup-input" placeholder="Email" required>
+                <button type="submit" class="signup-button">S'inscrire</button>
             </form>
-            <p id="signupMessage"></p>
+            <p id="signupMessage" class="signup-message"></p>
         </section>
     </main>
     <script src="script.js"></script>
