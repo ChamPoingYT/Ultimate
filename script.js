@@ -1,75 +1,74 @@
-// script.js
+document.addEventListener("DOMContentLoaded", function() {
+    var loginFormContainer = document.getElementById("loginFormContainer");
+    var signupFormContainer = document.getElementById("signupFormContainer");
+    var loginLink = document.getElementById("loginLink");
+    var signupLink = document.getElementById("signupLink");
 
-// Simulation de l'avatar par défaut
-const defaultAvatarUrl = 'default-avatar.jpg';
-
-// Changement d'avatar
-const changeAvatarButton = document.getElementById('changeAvatarButton');
-changeAvatarButton.addEventListener('click', function() {
-    alert('Fonctionnalité de changement d\'avatar à implémenter');
-});
-
-// Déconnexion
-const logoutButton = document.getElementById('logoutButton');
-logoutButton.addEventListener('click', function() {
-    if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
-        alert('Vous êtes déconnecté');
-        window.location.href = 'logout.html'; // Redirection vers la page de déconnexion
-    }
-});
-
-// Création de forum
-const createForumButton = document.getElementById('createForumButton');
-createForumButton.addEventListener('click', function() {
-    alert('Fonctionnalité de création de forum à implémenter');
-});
-
-// Création de salon
-const createChannelButton = document.getElementById('createChannelButton');
-createChannelButton.addEventListener('click', function() {
-    alert('Fonctionnalité de création de salon à implémenter');
-});
-
-// Affichage du profil au survol de l'avatar
-const avatarImages = document.querySelectorAll('.avatar-small');
-const profilePreview = document.getElementById('profilePreview');
-
-avatarImages.forEach(avatar => {
-    avatar.addEventListener('contextmenu', function(event) {
+    // Afficher le formulaire d'inscription et masquer celui de connexion
+    signupLink.addEventListener("click", function(event) {
         event.preventDefault();
-        const username = 'Username'; // Exemple de récupération du nom d'utilisateur
-        const bio = 'Bio de l\'utilisateur'; // Exemple de récupération de la bio
-        const role = 'Role de l\'utilisateur'; // Exemple de récupération du rôle
-        profilePreview.style.display = 'block';
-        profilePreview.innerHTML = `
-            <div class="profile-info">
-                <img src="${avatar.src}" alt="Avatar" class="avatar-small">
-                <div class="profile-details">
-                    <span class="profile-username">${username}</span><br>
-                    <span class="profile-bio">${bio}</span><br>
-                    <span class="profile-role">${role}</span>
-                </div>
-            </div>
-        `;
+        loginFormContainer.style.display = "none";
+        signupFormContainer.style.display = "block";
     });
-});
 
-// Masquage du profil au clic à l'extérieur
-document.addEventListener('click', function(event) {
-    if (!event.target.closest('.avatar-small')) {
-        profilePreview.style.display = 'none';
+    // Afficher le formulaire de connexion et masquer celui d'inscription
+    loginLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        signupFormContainer.style.display = "none";
+        loginFormContainer.style.display = "block";
+    });
+
+    // Validation côté client pour le formulaire de connexion
+    var loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", function(event) {
+        if (!validateLoginForm()) {
+            event.preventDefault();
+        }
+    });
+
+    function validateLoginForm() {
+        var username = document.getElementById("usernameLogin").value.trim();
+        var password = document.getElementById("passwordLogin").value.trim();
+
+        if (username === "") {
+            alert("Veuillez saisir un nom d'utilisateur pour vous connecter.");
+            return false;
+        }
+
+        if (password === "") {
+            alert("Veuillez saisir un mot de passe pour vous connecter.");
+            return false;
+        }
+
+        return true;
+    }
+
+    // Validation côté client pour le formulaire d'inscription
+    var signupForm = document.getElementById("signupForm");
+    signupForm.addEventListener("submit", function(event) {
+        if (!validateSignupForm()) {
+            event.preventDefault();
+        }
+    });
+
+    function validateSignupForm() {
+        var username = document.getElementById("usernameSignup").value.trim();
+        var password = document.getElementById("passwordSignup").value.trim();
+
+        if (username === "") {
+            alert("Veuillez saisir un nom d'utilisateur pour vous inscrire.");
+            return false;
+        }
+
+        if (password === "") {
+            alert("Veuillez saisir un mot de passe pour vous inscrire.");
+            return false;
+        }
+
+        // Autres validations si nécessaires
+
+        return true;
     }
 });
 
-// Fonction de recherche de forum
-function searchForum() {
-    event.preventDefault();
-    const forumSearchInput = document.getElementById('forumSearchInput').value;
-    if (forumSearchInput.trim() !== '') {
-        alert(`Recherche de forum : ${forumSearchInput}`);
-        // Implémenter la logique de recherche de forum ici
-    } else {
-        alert('Veuillez entrer un terme de recherche');
-    }
-}
 
